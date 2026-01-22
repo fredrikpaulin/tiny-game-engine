@@ -47,7 +47,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/fredrikpaulin/tiny-game-engine"
   },
   "devDependencies": {
     "bun-types": "latest",

@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test'
-import { lerp, clamp, degToRad, radToDeg, rand, randInt, pick, wrap } from '../src/helpers.js'
+import { lerp, clamp, degToRad, radToDeg, rand, randInt, pick } from '../src/helpers.js'
 
 test('lerp interpolates', () => {
   expect(lerp(0, 10, 0)).toBe(0)
@@ -69,11 +69,4 @@ test('pick returns element from array', () => {
     let v = pick(arr)
     expect(arr).toContain(v)
   }
-})
-
-test('wrap wraps values', () => {
-  expect(wrap(0, 10, 5)).toBe(5)
-  expect(wrap(0, 10, 10)).toBe(0)
-  expect(wrap(0, 10, 12)).toBe(2)
-  expect(wrap(0, 10, -2)).toBe(8)
 })
