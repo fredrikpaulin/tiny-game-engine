@@ -1,0 +1,12 @@
+reference_project/
+examples/
+test/
+.cursor/
+*.log
+bun.lock
+build.js
+server.js
+tsconfig.json
+CLAUDE.md
+PLAN.md
+bunfig.toml

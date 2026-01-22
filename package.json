@@ -1,0 +1,56 @@
+{
+  "name": "tiny-game-engine",
+  "version": "0.1.0",
+  "description": "A minimalist 2D game engine optimized for JS13K (<2KB gzipped)",
+  "type": "module",
+  "main": "dist/tiny.js",
+  "module": "dist/tiny.mjs",
+  "types": "dist/tiny.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tiny.mjs",
+      "require": "./dist/tiny.js",
+      "types": "./dist/tiny.d.ts"
+    },
+    "./core": "./src/core.js",
+    "./vec": "./src/vec.js",
+    "./loop": "./src/loop.js",
+    "./events": "./src/events.js",
+    "./entity": "./src/entity.js",
+    "./sprite": "./src/sprite.js",
+    "./input": "./src/input.js",
+    "./collision": "./src/collision.js",
+    "./pool": "./src/pool.js",
+    "./helpers": "./src/helpers.js"
+  },
+  "scripts": {
+    "dev": "bun run --hot server.js",
+    "build": "bun run build.js",
+    "test": "bun test",
+    "size": "bun run build && gzip -c dist/tiny.min.mjs | wc -c",
+    "prepublishOnly": "bun test && bun run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "game",
+    "engine",
+    "js13k",
+    "2d",
+    "canvas",
+    "minimal",
+    "tiny"
+  ],
+  "author": "Fredrik Paulin <fredrik@rymdskepp.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "typescript": "^5.0.0"
+  }
+}

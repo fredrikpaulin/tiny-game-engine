@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sprite.schema.json",
+  "title": "Sprite",
+  "description": "Renderable sprite entity",
+  "allOf": [{ "$ref": "entity.schema.json" }],
+  "properties": {
+    "color": { "type": "string", "description": "Fill color (CSS color string)" },
+    "image": { "description": "HTMLImageElement or HTMLCanvasElement for rendering" },
+    "animations": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/animation" },
+      "description": "Named animations from a spritesheet"
+    }
+  },
+  "definitions": {
+    "animation": {
+      "type": "object",
+      "properties": {
+        "frames": {
+          "oneOf": [
+            { "type": "number" },
+            { "type": "array", "items": { "type": "number" } }
+          ],
+          "description": "Frame index or array of frame indices"
+        },
+        "frameRate": { "type": "number", "default": 12, "description": "Frames per second" },
+        "loop": { "type": "boolean", "default": true, "description": "Loop animation" }
+      },
+      "required": ["frames"]
+    }
+  }
+}

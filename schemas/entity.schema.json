@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "entity.schema.json",
+  "title": "Entity",
+  "description": "Base game entity properties",
+  "type": "object",
+  "properties": {
+    "x": { "type": "number", "default": 0, "description": "X position" },
+    "y": { "type": "number", "default": 0, "description": "Y position" },
+    "width": { "type": "number", "default": 0, "description": "Width in pixels" },
+    "height": { "type": "number", "default": 0, "description": "Height in pixels" },
+    "dx": { "type": "number", "default": 0, "description": "X velocity" },
+    "dy": { "type": "number", "default": 0, "description": "Y velocity" },
+    "ddx": { "type": "number", "default": 0, "description": "X acceleration" },
+    "ddy": { "type": "number", "default": 0, "description": "Y acceleration" },
+    "rotation": { "type": "number", "default": 0, "description": "Rotation in radians" },
+    "anchor": {
+      "type": "object",
+      "properties": {
+        "x": { "type": "number", "default": 0, "minimum": 0, "maximum": 1 },
+        "y": { "type": "number", "default": 0, "minimum": 0, "maximum": 1 }
+      },
+      "default": { "x": 0, "y": 0 },
+      "description": "Anchor point (0,0 = top-left, 1,1 = bottom-right)"
+    },
+    "opacity": { "type": "number", "default": 1, "minimum": 0, "maximum": 1, "description": "Opacity (0-1)" },
+    "ttl": { "type": "number", "default": -1, "description": "Time to live in seconds (-1 = infinite)" }
+  }
+}
